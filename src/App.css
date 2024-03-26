@@ -1,0 +1,341 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Chrome, Safari, and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App-logo {
+  height: 80px;
+  margin-top: 20px;
+}
+
+.App-main {
+    padding-top: 60px; /* Adjust this value based on the height of your navbar */
+}
+
+.App-nav {
+  display: flex;
+  justify-content: space-between; /* Distribute space between links */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px;
+  background-color: #1563ff; /* Dark background */
+  color: white;
+}
+
+.App-nav a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Add some padding */
+}
+
+.App-nav a:hover, .App-nav a:focus {
+  background-color: #4CAF50; /* Green background on hover/focus */
+}
+
+.App-header {
+  background-color: #e8e8e8;
+  color: black;
+  padding: 280px 20px;
+  font-size: calc(10px + 2vmin);
+}
+
+.bodyContainers {
+  text-align: left;
+  max-width: 1000px;
+}
+
+h2 {
+  color: #ffffff;
+  padding-bottom: 15px;
+}
+
+.App-footer {
+  background-color: #e8e8e8;
+  color: rgb(0, 0, 0);
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+.Navbar {
+  display: flex;
+  position: fixed; /* Stick the navbar to the top of the screen */
+  top: 0; /* Align top edge of the navbar with the top edge of the screen */
+  left: 0; /* Align left edge of the navbar with the left edge of the screen */
+  width: 100%; /* Ensure navbar extends full width of the screen */
+  z-index: 10; /* Ensure navbar stays on top of other content */
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  padding: -5px 20px;
+  background-color: transparent;
+  margin: 0 auto;
+  min-height: 10px;
+}
+
+.Navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.938); /* Semi-transparent after scrolling */
+}
+
+.Navbar-logo {
+  height: 30px; /* Adjust based on your logo */
+  padding: 15px 10px;
+  padding-left: 40px;
+  padding-top: 15px;
+  transition: max-width 0.3s ease; /* Smooth transition for resizing */
+}
+
+.Navbar-logo-small {
+  width: 50px; /* Adjust based on your design */
+  height: auto;
+}
+
+.nav-container-small {
+  display: none;
+  /* Display this div if you decide to add a toggle for a dropdown menu */
+}
+
+/* App.css */
+@media (max-width: 768px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Navbar-logo {
+    width: 50px; /* Smaller logo for mobile */
+  }
+
+  .navButtons {
+    font-size: 14px; /* Smaller font size for mobile */
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column; /* Stack navigation buttons vertically */
+  }
+}
+
+.logo-text {
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  font-weight: 600; /* Semi-bold */
+  color: #000000; /* Example color, adjust as needed */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Optional, for depth */
+  text-align: left;
+  padding-right: 400px;
+  /* Other styling as needed */
+}
+
+.navButtons{
+  border: none;
+  color: rgb(0, 0, 0);
+  font-weight: 180;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration:none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+  transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
+  
+}
+
+.navButtons:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Shadow effect */
+}
+
+.navButtons-outline {
+  background-color: transparent;
+  color: black; /* Ensure text color is visible on a light background */
+  border: 2px solid #000000; /* Green border */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically (if the container has explicit height) */
+  padding-right: 40px;
+}
+
+.rightAlign, .leftAlign {
+  text-align: justify;
+  padding-left: 90px;
+  padding-right: 90px;
+  scroll-margin-top: 90px;
+}
+
+.social-links{
+  height: 60px;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+
+.Section-heading{
+  text-align: center;
+  
+}
+
+/* Styling for section headers for uniformity */
+.Section h2 {
+  color: #ffffff; /* Slightly muted compared to body text */
+  margin-bottom: 15px; /* Space between header and content */
+  text-align: center;
+}
+
+/* Styling for smaller headers within sections like for job titles or project names */
+.Section h3 {
+  margin-top: 20px;
+  color: #ffffff; /* Make subtitles stand out less than main titles */
+}
+
+/* Styling for dates and small details */
+.Section h4 {
+  margin-bottom: 10px;
+  color: hsl(0, 0%, 100%); /* Even less prominent than h3 */
+  font-size: 0.9em; /* Smaller than normal text */
+}
+
+.me-lol{
+  height: 600px;
+}
+
+.aboutMe{
+  text-align: left;
+}
+
+.content-container {
+  display: flex; /* Establishes a flex container */
+  align-items: center; /* Vertically center the items */
+  gap: 60px; /* Adds some space between the image and the text */
+  
+}
+
+.image-container img {
+  width: 200px; /* Adjust based on your image and design */
+  height: auto; /* Maintain aspect ratio */
+  justify-content: right;
+  padding-bottom: 60px;
+}
+
+.text-container {
+  flex: 1; /* Allows the text container to fill up the remaining space */
+  width: 60px;
+  padding-bottom: 90px;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+      flex-direction: column; /* Stacks image and text vertically on smaller screens */
+  }
+  .nav-container {
+      flex-direction: column;
+      text-align: center;
+  }
+  .Navbar-logo, .navButtons {
+      margin-bottom: 10px; /* Space out items in vertical nav */
+  }
+}
+
+@media (max-width: 800px) {
+  /* Adjust styles for smaller screens here */
+  .content-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .text-container, .image-container {
+    width: 100%; /* Full width for smaller screens */
+    text-align: center; /* Center-align text */
+  }
+
+  .nav-container {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center; /* Center-align nav items */
+  }
+}
+
+img {
+  max-width: 100%; /* Ensures that images are never wider than their container */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+.cool-link {
+  display: inline-block;
+  background-color: #ffffff; /* Change this color to fit your site theme */
+  color: rgb(0, 0, 0);
+  padding: 12px 24px;
+  margin: 10px 0;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cool-link:hover {
+  background-color: #b5b5b5; /* Darker shade for hover effect */
+  transform: translateY(-2px); /* Slight lift when hovered */
+}
+
+/* Responsive adjustments for project links and containers */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container, .image-container {
+    width: 100%; /* Full width in smaller screens */
+  }
+
+  .cool-link {
+    padding: 10px 20px; /* Slightly smaller padding on smaller screens */
+  }
+}
+
+.typing-animation {
+  width: 35ch; /* Adjust based on the length of your text */
+  animation: typing 4s steps(14) infinite;
+  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden; /* Ensures the content doesn't flow outside */
+  border-right: 3px solid; /* Cursor-like border */
+  font-family: 'Courier New', monospace; /* Command-line like font */
+  margin: 0 auto; /* Centering the text */
+  color: rgb(0, 0, 0); /* Text color */
+  font-size: 24px; /* Text size */
+}
+
+@keyframes typing {
+  0%, 100% { width: 0; }
+  25%, 75% { width: 35ch; }
+  50% { width: 35ch; border-right: 3px solid transparent; } /* Hide cursor midway */
+}
+
+.pdf-container {
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Optional: adds a light shadow around the iframe */
+  max-width: 100%; /* Ensures that the container fits within its parent element */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .pdf-container iframe {
+    width: 100%; /* Makes the iframe fully responsive */
+    height: 500px; /* Adjust height as needed */
+  }
+}
+
