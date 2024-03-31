@@ -1,76 +1,74 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './App.css';
 import logo from './logo.png'; // Ensure the path to your logo is correct
+import smaller_logo from './smaller_logo.png';
 import github from './github.png';
 import email from './email.png';
 import linkedin from './linkedin.png';
 import me from './me.png'
 import headerBackground from './header-background.png'
 import resume from './resume.pdf'
+import './App.css';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isNarrowScreen, setIsNarrowScreen] = useState(window.innerWidth < 1080);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Effect for handling scroll
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 400;
+      const isScrolled = window.scrollY > 200;
       setScrolled(isScrolled);
     };
-
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Effect for handling resize
   useEffect(() => {
     const handleResize = () => setIsNarrowScreen(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (isNarrowScreen) {
-    // Return a simplified navbar for narrow screens
-    return (
-      <nav className={`Navbar ${scrolled ? 'scrolled' : ''}`}>
+  const toggleMenu = () => {
+    setIsOpen(!isOpen); // Toggle the menu
+  };
+
+  return (
+    <nav className={`Navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-brand">
         <a href="#page-top">
-          <img src={logo} alt="Logo" className="Navbar-logo" />
+          <img src={isNarrowScreen ? smaller_logo : logo} alt="Logo" className="Navbar-logo" />
         </a>
-        <div className="nav-container">
-          {/* Full set of nav items */}
-          <a className="navButtons" href="#about">About</a>
-          <a className="navButtons" href="#experience">Experience</a>
-          <a className="navButtons" href="#projects">Projects</a>
-          <a className="navButtons" href="#skills">Skills</a>
-          <a className="navButtons" href="#contact">Let's Connect!</a>
+      </div>
+      {isNarrowScreen ? (
+        <>
+          <div className="navbar-name"><b>Aditya Uniyal</b></div>
+          <button onClick={toggleMenu} className="menu-button"><b>Menu &#9776;</b></button>
+        </>
+      ) : (
+        <>
+          {/* This ensures navigation links are always shown on larger screens */}
+          <div className={`nav-container ${isOpen ? 'open' : ''}`}>
+            <a className="navButtons" href="#about" onClick={() => setIsOpen(false)}>About</a>
+            <a className="navButtons" href="#experience" onClick={() => setIsOpen(false)}>Experience</a>
+            <a className="navButtons" href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
+            <a className="navButtons" href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
+            <a className="navButtons" href="#contact" onClick={() => setIsOpen(false)}>Let's Connect!</a>
+          </div>
+        </>
+      )}
+      {isOpen && isNarrowScreen && (
+        <div className={`nav-container ${isOpen ? 'open' : ''}`}>
+          <a className="nav-item" href="#about" onClick={() => setIsOpen(false)}>About</a>
+          <a className="nav-item" href="#experience" onClick={() => setIsOpen(false)}>Experience</a>
+          <a className="nav-item" href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
+          <a className="nav-item" href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
+          <a className="nav-item" href="#contact" onClick={() => setIsOpen(false)}>Let's Connect!</a>
         </div>
-      </nav>
-    );
-  } else {
-    // Return the full navbar for wider screens
-    return (
-      <nav className={`Navbar ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#page-top">
-          <img src={logo} alt="Logo" className="Navbar-logo" />
-        </a>
-        <div className="nav-container">
-          {/* Full set of nav items */}
-          <a className="navButtons" href="#about">About</a>
-          <a className="navButtons" href="#experience">Experience</a>
-          <a className="navButtons" href="#projects">Projects</a>
-          <a className="navButtons" href="#skills">Skills</a>
-          <a className="navButtons" href="#contact">Let's Connect!</a>
-        </div>
-      </nav>
-    );
-  }
+      )}
+    </nav>
+  );
 }
   
 
@@ -90,10 +88,14 @@ function App() {
               <img src={me} alt="me" className="me-lol" />
             </div>
             <div class="text-container">
-              <p className="aboutMe"> Hi, I'm Aditya Uniyal, an aspiring Application Developer and a BSc Specialization in Computer Science student at the University of Western Ontario, aiming to graduate in May 2025. My journey in tech started with a curiosity for how digital solutions can improve everyday tasks and has evolved into a dedicated pursuit of developing robust, user-centered applications.
-              Last summer, I made significant strides as an Application Developer at Lynch Fluid Controls, where I spearheaded the development of an order tracking web application. This project not only honed my technical skills in a LAMP technology stack but also instilled a deep appreciation for data integrity and security, resulting in a 20% increase in order tracking efficiency. My experience as a Back-end Developer for a Political Party allowed me to enhance voter engagement through effective data management and dynamic web solutions, improving user engagement by 25%.
-              Academically, I am immersed in a curriculum that spans from Data Structures and Algorithms to Software Engineering, each course laying the groundwork for my understanding of complex computing principles. My hands-on projects, like Movie Fight, WealthWatch, and ClearSpell, showcase my proficiency in various technologies from JavaScript and React to MongoDB and Node.js, each solving unique problems with innovative and user-friendly interfaces. Beyond my technical skills, I am a proactive International Peer Guide at my university, dedicating time to assist and mentor international students. This role has been instrumental in refining my leadership, mentorship, and interpersonal skills, essential qualities that I bring to every team and project.
-              In every endeavor, from developing applications to volunteering, I strive to combine technical expertise with a deep understanding of user needs, driving solutions that are not only efficient but also intuitive and accessible.Let's connect and explore how we can collaborate on future projects!</p>
+              <h3>Studying and Solving</h3>
+              <p>On track to graduate from the University of Western Ontario in 2025, I'm deep into deciphering the languages of computers. I relish the challenge of smoothing out the tech tangles that trip people up, striving to create solutions that simplify and enhance everyday experiences.</p>
+              <h3>Mentorship and Community</h3>
+              <p>Coding is just one part of my world. I've found joy in mentoring, being a companion and guide to fellow students, particularly those venturing away from their home turf for the first time. For me, it's about building a community where everyone feels included, and no story goes unheard.</p>
+              <h3>Discovering and Creating</h3>
+              <p>My curiosity doesn't power down with my devices. I'm a movie buff, amateur photographer, and an enthusiastic cook. Each hobby is a slice of life where I explore different perspectives, stir up creativity, and savor the world's flavors.</p>
+              <h3>Conversations and Collaborations</h3>
+              <p>Whether you're wrestling with a coding conundrum, seeking film recommendations, or on the hunt for the next best recipe, I'm here for it. Reach out, and let's exchange ideas, challenges, and maybe even a few laughs along the way.</p>
             </div>
           </div>
         </section>
@@ -103,13 +105,14 @@ function App() {
             <h2>Experience</h2>
             <h3>Lynch fluid Controls</h3>
             <h4>May 2023 - Spetember 2023</h4>
-            <p>• Designed and developed a robust order tracking web application utilizing a LAMP technology stack, focused on ensuring data integrity, security, and performance optimization. </p>
-            <p>• Streamlined the order management process, resulting in improved efficiency and accuracy of order tracking by 20%.</p>
+            <p>• Updated and maintained an order tracking web application utilizing a LAMP technology stack, focused on ensuring data integrity, security, and performance optimization.</p>
+            <p>• Enhanced inter-departmental communication through streamlined order management, leading to improved production efficiency and workflow synchronization..</p>
             <p>• Implemented advanced data sanitization techniques to safeguard against SQL injection and cross-site scripting (XSS) attacks.</p>
             <br></br>
             <h3>Political Party</h3>
             <h4>May 2019 - Spetember 2019</h4>
-            <p>• Maintained a comprehensive database of voter demographics and voting history using MySQL and InnoDB, handling over 500,000 records. Improved data query performance by 30%, ensuring faster access and higher data integrity.</p>
+            <p>• Maintained a comprehensive database of voter demographics and voting history using MySQL and InnoDB, handling over 500,000 records.</p>
+            <p>• Improved data query performance by 30%, ensuring faster access and higher data integrity.</p>
             <p>• Utilized HTML and JavaScript to maintain a dynamic website, leading to a 40% increase in daily visitors and a 25% improvement in user engagement</p>
           </div>
           <div className="pdf-container">
