@@ -78,7 +78,7 @@ function App() {
       <Navbar />
       <header className="App-header" style={{ backgroundImage: `url(${headerBackground})` }}>
         <h1>Hi, my name is Aditya 👋</h1>
-        <div className="typing-animation"><h3>I'm a Full-stack Developer!</h3></div>
+        <div className="typing-animation"><h3>I'm a Software Developer!</h3></div>
       </header>
       <main className="App-main">
         <section id="about" className="rightAlign">
@@ -88,14 +88,14 @@ function App() {
               <img src={me} alt="me" className="me-lol" />
             </div>
             <div class="text-container">
-              <h3>Studying and Solving</h3>
-              <p>On track to graduate from the University of Western Ontario in 2025, I'm deep into deciphering the languages of computers. I relish the challenge of smoothing out the tech tangles that trip people up, striving to create solutions that simplify and enhance everyday experiences.</p>
-              <h3>Mentorship and Community</h3>
-              <p>Coding is just one part of my world. I've found joy in mentoring, being a companion and guide to fellow students, particularly those venturing away from their home turf for the first time. For me, it's about building a community where everyone feels included, and no story goes unheard.</p>
-              <h3>Discovering and Creating</h3>
-              <p>My curiosity doesn't power down with my devices. I'm a movie buff, amateur photographer, and an enthusiastic cook. Each hobby is a slice of life where I explore different perspectives, stir up creativity, and savor the world's flavors.</p>
-              <h3>Conversations and Collaborations</h3>
-              <p>Whether you're wrestling with a coding conundrum, seeking film recommendations, or on the hunt for the next best recipe, I'm here for it. Reach out, and let's exchange ideas, challenges, and maybe even a few laughs along the way.</p>
+              <h3>Building Reliable Software</h3>
+              <p>Graduating from the University of Western Ontario in February 2026, I'm focused on creating production-ready systems and writing maintainable code. I enjoy the challenge of building software that's not just functional, but reliable, well-tested, and makes a real difference in how people work and interact with technology.</p>
+              <h3>Mentorship and Teaching</h3>
+              <p>Beyond coding, I've discovered a passion for teaching and mentoring. Whether I'm helping students master Java fundamentals or debugging complex problems together, I find joy in making technical concepts accessible and fostering a collaborative learning environment where everyone can grow.</p>
+              <h3>Exploring and Learning</h3>
+              <p>When I'm not coding, you'll find me exploring new technologies, watching films, experimenting with photography, or trying out new recipes. Each hobby is a chance to learn something new, see different perspectives, and bring fresh ideas back to my software development work.</p>
+              <h3>Let's Connect</h3>
+              <p>Whether you want to discuss software architecture, debugging strategies, career advice, or just chat about the latest tech trends, I'm always up for a good conversation. Feel free to reach out—I'd love to hear from you!</p>
             </div>
           </div>
         </section>
@@ -103,17 +103,19 @@ function App() {
         <div class="content-container">
           <div class="text-container">
             <h2>Experience</h2>
-            <h3>Lynch fluid Controls</h3>
-            <h4>May 2023 - Spetember 2023</h4>
-            <p>• Updated and maintained an order tracking web application utilizing a LAMP technology stack, focused on ensuring data integrity, security, and performance optimization.</p>
-            <p>• Enhanced inter-departmental communication through streamlined order management, leading to improved production efficiency and workflow synchronization..</p>
-            <p>• Implemented advanced data sanitization techniques to safeguard against SQL injection and cross-site scripting (XSS) attacks.</p>
+            
+            <h3>Ultimate Coders</h3>
+            <h4>Coding Instructor | June 2024 - June 2025 | Scarborough</h4>
+            <p>• Developed and delivered comprehensive Java programming curriculum for 20+ students aged 9-16, covering object-oriented programming concepts, data structures, and algorithm design using Java, Python, and JavaScript.</p>
+            <p>• Created hands-on coding exercises focused on problem-solving, debugging methodologies, and software development best practices resulting in measurable improvement in students' ability to write maintainable code.</p>
+            <p>• Achieved an average lesson satisfaction score of 4.6/5 through clear technical communication and collaborative mentorship, demonstrating ability to explain complex programming concepts to diverse audiences.</p>
             <br></br>
-            <h3>Political Party</h3>
-            <h4>May 2019 - Spetember 2019</h4>
-            <p>• Maintained a comprehensive database of voter demographics and voting history using MySQL and InnoDB, handling over 500,000 records.</p>
-            <p>• Improved data query performance by 30%, ensuring faster access and higher data integrity.</p>
-            <p>• Utilized HTML and JavaScript to maintain a dynamic website, leading to a 40% increase in daily visitors and a 25% improvement in user engagement</p>
+            
+            <h3>Lynch Fluid Controls</h3>
+            <h4>Application Developer | May 2024 - September 2024 | Mississauga</h4>
+            <p>• Developed and maintained database-driven web applications using PHP, MySQL, HTML/CSS, and JavaScript, collaborating with cross-functional teams including QA, operations, and management to deliver reliable, high-performing solutions that improved workflow efficiency by 15%.</p>
+            <p>• Built interactive dashboards and reports in Power BI integrated with Microsoft Business Central APIs, utilizing RESTful APIs and third-party integrations to deliver real-time business intelligence solutions.</p>
+            <p>• Participated in full software development lifecycle including requirements gathering, design, development, testing, and deployment; collaborated closely with QA team to identify and resolve software defects, reducing system downtime by 20%.</p>
           </div>
           <div className="pdf-container">
               <iframe src={resume} title="Aditya Uniyal's Resume" width="600" height="700" style={{border: 'none'}}></iframe>
@@ -124,42 +126,51 @@ function App() {
           <h2>Projects</h2>
           <div class="content-container">
             <div class="text-container">
-              <h3 className="bodyContainer">Movie Fight</h3>
-              <p>A web application which compares the stats of two movies picked by the user and determines 
-              which movie is statistically better. For this, the program compares award nominations, box office income, 
-              Metacritic score and its IMDb rating. </p>
-              <h4 className="bodyContainer">Technologies Used: <i>HTML, CSS, JavaScript, Rest API</i> </h4>
-              <a href="https://adityauniyal3.github.io/Movie-Fight/" target="_blank" rel="noopener noreferrer" class="cool-link">Check out Movie Fight!</a>
+              <h3 className="bodyContainer">ClearSpell</h3>
+              <p className="bodyContainer">A production-quality desktop application developed as a group project, featuring clean architectural separation and automated testing in Java. Implements spell-checking systems operating on 100,000+ word dictionaries with efficient algorithmic logic to ensure correctness and maintainability. Designed with proper error handling, input validation, and comprehensive test coverage using JUnit.</p>
+              <h4 className="bodyContainer">Technologies Used: <i>Java, JavaFX, JUnit</i></h4>
+              <a href="https://github.com/AdityaUniyal3/ClearSpell" target="_blank" rel="noopener noreferrer" class="cool-link">Check out ClearSpell!</a>
               <br></br>
+              
+              <h3 className="bodyContainer">DIY Teachable Machine</h3>
+              <p>A fully client-side machine learning web application using TensorFlow.js, applying transfer learning with MobileNet to enable real-time image classification from live webcam input. Demonstrates responsive, user-facing ML functionality with an intuitive interface for training custom models directly in the browser.</p>
+              <h4 className="bodyContainer">Technologies Used: <i>JavaScript, TensorFlow.js, HTML/CSS</i></h4>
+              <a href="https://github.com/AdityaUniyal3/DIY-Teachable-Machine" target="_blank" rel="noopener noreferrer" class="cool-link">Check out DIY Teachable Machine!</a>
+              <br></br>
+              
+              <h3 className="bodyContainer">CUDA-Accelerated SMOTE</h3>
+              <p>A GPU-accelerated implementation of the Synthetic Minority Oversampling Technique (SMOTE) algorithm using C++ and NVIDIA CUDA. Engineered low-level hardware programming to parallelize distance matrix computations and k-nearest neighbor selection for imbalanced datasets, achieving up to 700× speedup on high-dimensional data. Applied object-oriented design principles and conducted comprehensive performance benchmarking to validate reliability and scalability.</p>
+              <h4 className="bodyContainer">Technologies Used: <i>C++, CUDA, Python</i></h4>
+              <br></br>
+              <a href="https://github.com/AdityaUniyal3/CUDA-Accelerated-SMOTE" target="_blank" rel="noopener noreferrer" class="cool-link">CUDA-Accelerated-SMOTE!</a>
+              
               <h3 className="bodyContainer">WealthWatch</h3>
-              <p>A web application which offers intuitive budgeting, expense tracking, and financial analytics 
-              to aid users in informed financial management. It features a responsive user interface, automated expense categorization, and robust security with JWT authentication, ensuring a seamless and secure user 
-              experience</p>
+              <p>A full-stack web application offering intuitive budgeting, expense tracking, and financial analytics. Features a responsive user interface, automated expense categorization, and robust security with JWT authentication for a seamless user experience. Built with the MERN stack to provide real-time financial insights and data visualization.</p>
               <h4 className="bodyContainer">Technologies Used: <i>MongoDB, Express, React, Node.js</i></h4>
               <a href="https://github.com/AdityaUniyal3/WealthWatch/" target="_blank" rel="noopener noreferrer" class="cool-link">Check out WealthWatch!</a>
               <br></br>
-              <h3 className="bodyContainer">ClearSpell</h3>
-              <p className="bodyContainer">A desktop application developed as a group project for an Intro to Software Engineering course. 
-              It is designed to spell check text documents by comparing words against a standard and a user-customized 
-              dictionary. The application detects and suggests corrections for various types of errors, including 
-              misspellings and miscapitalizations.</p>
-              <h4 className="bodyContainer">Technologies Used: <i>Java, JavaFX, JUnit</i></h4>
-              <a href="https://github.com/AdityaUniyal3/ClearSpell" target="_blank" rel="noopener noreferrer" class="cool-link">Check out ClearSpell!</a>
+              
+              <h3 className="bodyContainer">Movie Fight</h3>
+              <p>A web application that compares statistics of two movies selected by the user to determine which is statistically better. Compares award nominations, box office income, Metacritic scores, and IMDb ratings using data fetched from RESTful APIs with clean, responsive design.</p>
+              <h4 className="bodyContainer">Technologies Used: <i>HTML, CSS, JavaScript, REST API</i></h4>
+              <a href="https://adityauniyal3.github.io/Movie-Fight/" target="_blank" rel="noopener noreferrer" class="cool-link">Check out Movie Fight!</a>
               </div>
           </div>          
         </section>
         <section id="skills" className="leftAlign">
           <h2>Skills</h2>
-          <h3 className="bodyContainer">Languages:</h3>
-          <p>Python, Java, C, JavaScript, HTML5, CSS3, Git, MySQL, PHP</p>
-          <h3 className="bodyContainer">Editors:</h3>
-          <p>Visual Studio, Eclipse, PyCharm</p>
-          <h3 className="bodyContainer">Tools/Frameworks:</h3>
-          <p>phpMyAdmin, REST APIs, REACT, Node.js, Express, MongoDB, Junit, JIRA, Confluence</p>
-          <h3 className="bodyContainer">Tech Stack:</h3>
-          <p>Linux, Apache, MySQL and PHP (LAMP); MongoDB, Express.js, React, and Node.js (MERN)</p>
-          <h3 className="bodyContainer">Software:</h3>
-          <p>Microsoft Suite</p>
+          <h3 className="bodyContainer">Development:</h3>
+          <p>Core Java, Python, Object-Oriented Programming, JUnit</p>
+          <h3 className="bodyContainer">Web Technologies:</h3>
+          <p>PHP, HTML, CSS, JavaScript, RESTful APIs</p>
+          <h3 className="bodyContainer">Databases:</h3>
+          <p>MySQL, SQL, Database Design</p>
+          <h3 className="bodyContainer">Development Tools:</h3>
+          <p>IntelliJ IDEA, Eclipse, Git, GitHub, VS Code</p>
+          <h3 className="bodyContainer">Additional Technologies:</h3>
+          <p>React, Node.js, Express, MongoDB, Power BI, Microsoft Business Central, C++, CUDA</p>
+          <h3 className="bodyContainer">Soft Skills:</h3>
+          <p>Problem-Solving, Communication, Critical Thinking, Adaptability, Analytical Thinking</p>
         </section>
         <section id="contact" className="Section">
           <h2>Let's Connect!</h2>
